@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流加载图片</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            position: relative;
+        }
+        .img_box{
+            float: left;
+            padding: 4px;
+        }
+        .img{
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-shadow: 0 0 2px 2px #cccccc;
+        }
+        .img img{
+            width: 230px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/5.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/6.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/7.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/8.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/9.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/10.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/11.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/12.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/13.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/14.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/15.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/16.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/17.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/18.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/19.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/20.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/21.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/22.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/23.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/24.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/25.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/26.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/27.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/28.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/29.jpg"/>
+        </div>
+    </div>
+    <div class="img_box">
+        <div class="img">
+            <img src="../img/30.jpg"/>
+        </div>
+    </div>
+
+</div>
+<script>
+    window.onload = function () {
+        loadImg("box","img_box");
+        var imgData = {"data":[{"src":"5.jpg"},{"src":"6.jpg"},{"src":"7.jpg"},{"src":"8.jpg"},{"src":"9.jpg"},{"src":"10.jpg"},{"src":"11.jpg"}]};
+        window.onscroll = function(){
+           if(getCheck("box")){
+               var box = document.getElementById("box");
+               for(var i = 0;i<imgData.data.length;i++){
+                   var img_box = document.createElement("div");
+                   img_box.className = "img_box";
+                   var img_b = document.createElement("div");
+                   img_b.className = "img";
+                   var img = document.createElement("img");
+                   img.src= "../img/"+imgData.data[i].src;
+                   img_box.appendChild(img_b);
+                   img_b.appendChild(img);
+                   box.appendChild(img_box);
+               }
+           }
+            loadImg("box","img_box");
+        }
+        window.onresize = function(){
+            loadImg("box","img_box");
+        }
+    }
+    function getCheck(parent){
+        var p = document.getElementById(parent);
+        var content = getChildElement(p,"img_box");
+        var lastTop = content[content.length-1].offsetTop;
+        var scrollTop = document.body.scrollTop;
+        var clientHeight = document.documentElement.clientHeight;
+        if(lastTop<scrollTop+clientHeight){
+            return true;
+        }
+    }
+    function loadImg(pId,box){
+        var p = document.getElementById(pId);
+        var content = getChildElement(p,box);
+        var img_width = content[0].offsetWidth;
+        var clientWidth = document.documentElement.clientWidth;
+        var num = parseInt(clientWidth/img_width);
+        var box_width = num*img_width;
+        p.style.width = box_width+"px";
+        p.style.margin = "0 auto";
+        var img_height = [];
+        for(var i = 0;i<content.length;i++){
+            if(i<num){
+                img_height[i]=content[i].offsetHeight;
+            }else{
+                var minHeight = Math.min.apply(null,img_height);
+                var n = getMin(img_height,minHeight);
+                content[i].style.position = "absolute";
+                content[i].style.top = minHeight+"px";
+                content[i].style.left= n*img_width+"px";
+                img_height[n] = minHeight+content[i].offsetHeight;
+            }
+
+        }
+    }
+    function getMin(boxHeight,min){
+        for(var i = 0;i<boxHeight.length;i++){
+            if(boxHeight[i] === min){
+                return i;
+            }
+        }
+    }
+    function getChildElement(p,contentClassName){
+        var content = [];
+        var allContent = p.getElementsByTagName("*");
+        for(var i = 0;i<allContent.length;i++){
+            if(allContent[i].className === contentClassName){
+                content.push(allContent[i]);
+            }
+        }
+        return content;
+    }
+</script>
+</body>
+</html>
