@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>前端实验室</title>
-    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css" />
     <style>
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,14 +23,16 @@
             font: inherit;
             vertical-align: baseline;
         }
-        header{
+
+        header {
             position: relative;
             width: 100%;
             height: 50px;
             padding-left: 30px;
             background: #3e999f;
         }
-        .about{
+
+        .about {
             position: absolute;
             height: 50px;
             width: 200px;
@@ -41,31 +42,37 @@
             color: #FFFFFF;
             font-size: 16px;
         }
-        .about .la{
+
+        .about .la {
             position: absolute;
             top: 7px;
             width: 36px;
-            height:36px;
+            height: 36px;
             overflow: hidden;
             border-radius: 36px;
             border: 1px solid #cccccc;
             cursor: pointer;
         }
-        .la img{
+
+        .la img {
             display: block;
-            width:36px;
+            width: 36px;
             height: 36px;
         }
-        header h1{
+
+        header h1 {
             height: 50px;
             line-height: 50px;
             color: #ffffff;
             font-size: 32px;
         }
-        .body{
+
+        .body {
             height: 100%;
+            position: relative;
         }
-        nav{
+
+        nav {
             width: 300px;
             height: 100%;
             background: #1b1c1d;
@@ -74,37 +81,43 @@
             top: 0;
             left: 0;
         }
-        .nav_title{
+
+        .nav_title {
             padding-bottom: 10px;
             border-bottom: 1px solid #FFFFFF;
         }
-        .nav_title a{
+
+        .nav_title a {
             display: block;
             position: relative;
         }
-        .nav_title img{
+
+        .nav_title img {
             display: inline-block;
             height: 40px;
             width: 40px;
         }
-        .nav_title span{
+
+        .nav_title span {
             display: block;
             position: absolute;
             left: 50px;
-            top:0;
-            height:40px;
+            top: 0;
+            height: 40px;
             line-height: 40px;
             color: #FFFFFF;
             font-size: 28px;
         }
-        nav ul{
+
+        nav ul {
             list-style: none;
             padding-top: 20px;
         }
-        nav ul li{
-            height:50px;
+
+        nav ul li {
+            height: 50px;
             line-height: 50px;
-            font-size:18px;
+            font-size: 18px;
             padding-left: 16px;
             position: relative;
             -webkit-transition: all 0.2s;
@@ -113,7 +126,8 @@
             -o-transition: all 0.2s;
             transition: all 0.2s;
         }
-        nav ul li a{
+
+        nav ul li a {
             color: #676767;
             cursor: pointer;
             text-decoration: none;
@@ -123,195 +137,253 @@
             -o-transition: color 0.4s;
             transition: color 0.4s;
         }
-        nav ul li a:hover{
-            color:#FFFFFF;
+
+        nav ul li a:hover {
+            color: #FFFFFF;
             cursor: pointer;
             text-decoration: none;
         }
-        .nav_current{
+
+        .nav_current {
             background: #21b982;
         }
-        .nav_current:before{
+
+        .nav_current:before {
             content: '';
             display: block;
             position: absolute;
-            left:0;
+            left: 0;
             top: 0;
             width: 5px;
-            height:50px;
+            height: 50px;
             background: #FFFFFF;
-            -webkit-animation:nav_cur_before 0.2s;
-            -o-animation:nav_cur_before 0.2s;
-            animation:nav_cur_before 0.2s;
+            -webkit-animation: nav_cur_before 0.2s;
+            -o-animation: nav_cur_before 0.2s;
+            animation: nav_cur_before 0.2s;
         }
+
         /*.nav_current:after{*/
-            /*content: "";*/
-            /*display: block;*/
-            /*position: absolute;*/
-            /*left: 5px;*/
-            /*top: 0;*/
-            /*height:50px;*/
-            /*background: #21b982;*/
-            /*-webkit-animation:nav_cur 0.3s ease-in;*/
-            /*-o-animation:nav_cur 0.3s ease-in;*/
-            /*animation:nav_cur 0.3s ease-in forwards;*/
+        /*content: "";*/
+        /*display: block;*/
+        /*position: absolute;*/
+        /*left: 5px;*/
+        /*top: 0;*/
+        /*height:50px;*/
+        /*background: #21b982;*/
+        /*-webkit-animation:nav_cur 0.3s ease-in;*/
+        /*-o-animation:nav_cur 0.3s ease-in;*/
+        /*animation:nav_cur 0.3s ease-in forwards;*/
         /*}*/
-        .nav_current a{
+        .nav_current a {
             color: #FFFFFF;
         }
+
         @keyframes nav_cur_before {
-            0%{
+            0% {
                 opacity: 0;
             }
-            100%{
+            100% {
                 opacity: 1;
             }
         }
+
         /*导航栏底部*/
-        .nav_bottom{
+        .nav_bottom {
             margin-top: 20px;
             border-top: 1px solid #FFFFFF;
             padding-top: 20px;
         }
-        .about_me{
+
+        .about_me {
             position: relative;
         }
-        .me_img{
+
+        .me_img {
             position: absolute;
             left: 0;
             top: 0;
             border-radius: 42px;
             width: 42px;
-            height:42px;
+            height: 42px;
             overflow: hidden;
         }
-        .me_img img{
+
+        .me_img img {
             display: block;
             width: 42px;
             height: 42px;
             cursor: pointer;
         }
-        .me{
+
+        .me {
             position: absolute;
             top: 0;
             left: 60px;
             height: 32px;
         }
-        .me_name{
+
+        .me_name {
             display: inline-block;
             height: 42px;
             line-height: 42px;
             color: #676767;
             cursor: pointer;
         }
-        .me_name:hover{
+
+        .me_name:hover {
             color: #FFFFFF;
             text-decoration: none;
         }
+
         /*右侧内容*/
-        .container{
-            height: 1200px;
-            background: rgb(239,239,239);
+        .container {
+            min-height: 1200px;
+            background: rgb(239, 239, 239);
             position: absolute;
             top: 0;
             left: 300px;
             right: 0;
             width: auto;
-            padding:20px;
+            padding: 20px;
         }
-        .my_file{
-            width: 100%;
+
+        .my_file {
             height: auto;
             background: #FFFFFF;
-            -webkit-border-radius:5px;
-            -moz-border-radius:5px;
-            border-radius:5px;
-            padding:40px;
-            margin-bottom:40px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 40px;
+            margin-bottom: 40px;
         }
-        .container h2{
+
+        .container h2 {
             font-size: 22px;
             font-weight: 500;
             border-left: 2px solid #66C6FD;
-            padding-left:15px;
+            padding-left: 15px;
             padding-top: 5px;
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
-        .content{
+
+        .content {
             padding-left: 19px;
         }
-        .content_box>div{
-            float: left;
-        }
-        .content_box{
+
+        .content_box {
             padding-top: 10px;
             padding-bottom: 10px;
             border-bottom: 1px dashed #A6B7D0;
         }
-        .content_box:after{
-            content: "";
-            display: block;
-            clear: both;
-            height:0;
-            width: 100%;
-            visibility: hidden;
-        }
-        .content_box_title{
-            width: 15%;
-        }
-        .content_box_title h3{
-            border:2px solid #d4d3d3;
+
+        /*.content_box:after{*/
+        /*content: "";*/
+        /*display: block;*/
+        /*clear: both;*/
+        /*height:0;*/
+        /*width: 100%;*/
+        /*visibility: hidden;*/
+        /*}*/
+        /*.content_box_title{*/
+        /*width: 15%;*/
+        /*}*/
+        .content_box_title h3 {
+            border: 2px solid #d4d3d3;
             padding: 5px;
             background: #bbb9b9;
-            width:80px;
+            width: 80px;
             text-align: center;
             font-size: 16px;
             color: #FFFFFF;
         }
-        .content-box_body{
-            width:85%;
+
+        .content-box_body {
+            padding-top: 10px;
             padding-left: 20px;
         }
-        .content-box_body a{
+
+        .content-box_body a {
             line-height: 32px;
-            font-family: 华文黑体,"Microsoft YaHei",微软雅黑,STHei,"Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-family: 华文黑体, "Microsoft YaHei", 微软雅黑, STHei, "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #676767;
             display: inline-block;
             margin: 0 10px;
             text-decoration: none;
         }
-        .content-box_body a:hover{
+
+        .content-box_body a:hover {
             color: #333;
         }
+        .example_body{
+            position: relative;
+        }
+        .example{
+            padding:5px;
+            float: left;
+        }
+        .example_border {
+            padding: 8px;
+            -webkit-box-shadow: inset 0 0 2px #bbbbbb;
+            -moz-box-shadow: inset 0 0 2px #bbbbbb;
+            box-shadow: inset 0 0 2px #bbbbbb;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
 
+        .example_img {
+            width: 200px;
+            height: 200px;
+            background: url(img/panda.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .example_text {
+            width: 200px;
+            padding-top: 5px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 400;
+        }
+
+        .example_text h4 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .example_text p {
+            font-size: 12px;
+            line-height: 16px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .clear {
+            clear: both;
+        }
     </style>
 </head>
 <body>
-<!--<header>-->
-    <!--<h1>我的前端小屋</h1>-->
-    <!--<div class="about">-->
-        <!--<div class="la">-->
-            <!--<img src="icon/label.png">-->
-        <!--</div>-->
-
-        <!--关于我-->
-    <!--</div>-->
-<!--</header>-->
 <div class="body">
     <!--导航栏-->
     <nav class="nav_left">
         <div class="nav_title">
-            <a href="#" ><img src="icon/label.png"/><span>前端实验室</span></a>
+            <a href="#"><img src="icon/label.png"/><span>前端实验室</span></a>
         </div>
         <ul>
-            <li class="nav_current"><a>前端收藏夹</a></li>
+            <li class="nav_current"><a>前端社区</a></li>
             <li><a>实验室的实验品</a></li>
         </ul>
         <div class="nav_bottom">
             <div class="about_me">
                 <div class="me_img">
-                    <img src="icon/mengqiqi.ico" />
+                    <img src="icon/mengqiqi.ico"/>
                 </div>
                 <div class="me">
                     <a class="me_name" target="_blank" href="http://blog.csdn.net/u014346301">卫旗</a>
@@ -322,7 +394,7 @@
     <!--内容-->
     <div class="container">
         <div class="my_file">
-            <h2>博客/社区/资讯</h2>
+            <h2>前端社区</h2>
             <div class="content">
                 <!--国内综合-->
                 <div class="content_box">
@@ -399,15 +471,131 @@
         </div>
         <div class="my_file">
             <h2>我的实验室</h2>
+            <div class="content">
+                <div class="content_box">
+                    <div class="content_box_title">
+                        <h3>CSS3系列</h3>
+                    </div>
+                    <div class="content-box_body example_body" id="example_body">
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4>大熊猫</h4>
+                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script src="js/jquery-2.2.3.min.js"></script>
 <script>
-    $(function(){
-        $("nav.nav_left ul li a").each(function(){
-            $(this).on("click",function(){
+    $(function () {
+        $(window).load(function(){
+            fall();
+        });
+        function fall(){
+            var length = $("#example_body").find(".example").length;
+            var pWidth = $("#example_body").width();
+            var cWidth = $(".example").width()+10;
+            var size = parseInt(pWidth/cWidth);
+            var imgSize = [];
+            console.log(length,size,pWidth,cWidth);
+            for(var i = 0;i<length;i++){
+                if(i<size){
+                    imgSize[i] = $($("#example_body .example").get(i)).height()+20;
+                    console.log(imgSize[i]);
+                }else{
+                    var minHeight = Math.min.apply(null,imgSize);
+                    var min = getMin(imgSize,minHeight);
+                    $($("#example_body .example").get(i)).css({
+                        "position":"absolute",
+                        "top":minHeight+"px",
+                        "left":min*cWidth+20+"px"
+                    });
+                    imgSize[min] = imgSize[min]+$($("#example_body .example").get(i)).height()+10;
+                }
+                if(i===length-1){
+                    $("#example_body").height(Math.max.apply(null,imgSize));
+                }
+            }
+        }
+        function getMin(arr,value){
+            for(var i = 0;i<arr.length;i++){
+                if(arr[i] === value){
+                    return i;
+                }
+            }
+        }
+        $(window).resize(function () {
+            $("nav.nav_left").height($(window).height());
+        });
+        $("nav.nav_left ul li a").each(function () {
+            $(this).on("click", function () {
                 $(this).closest("li").addClass("nav_current").siblings().removeClass("nav_current");
             });
 
