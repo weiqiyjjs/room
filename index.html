@@ -334,13 +334,13 @@
 
         .example_img {
             width: 200px;
-            height: 200px;
             background: url(img/panda.jpg);
             -webkit-background-size: cover;
-            background-size: cover;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px;
+            background-size: cover;
+            cursor: pointer;
         }
 
         .example_text {
@@ -363,9 +363,25 @@
             line-height: 16px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-
-        .clear {
-            clear: both;
+        .panda_img{
+            background: url(img/panda.jpg);
+            height:200px;
+            background-size: cover;
+        }
+        .bike_img{
+            background: url(img/bike.jpg);
+            height: 100px;
+            background-size: cover;
+        }
+        .rback_img{
+            background: url("img/rback.jpg");
+            height: 100px;
+            background-size: cover;
+        }
+        .cube_img{
+            background: url("img/cube.jpg");
+            height: 200px;
+            background-size: cover;
         }
     </style>
 </head>
@@ -477,21 +493,10 @@
                         <h3>CSS3系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="example_body">
+                        <!--大熊猫-->
                         <div class="example">
                             <div class="example_border">
-                                <div class="example_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4>大熊猫</h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img">
+                                <div class="example_img panda_img">
                                 </div>
                                 <div class="example_text">
                                     <h4>大熊猫</h4>
@@ -499,49 +504,36 @@
                                 </div>
                             </div>
                         </div>
+                        <!--自行车-->
                         <div class="example">
                             <div class="example_border">
-                                <div class="example_img">
+                                <div class="example_img bike_img">
                                 </div>
                                 <div class="example_text">
-                                    <h4>大熊猫</h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <h4>自行车</h4>
+                                    <p>由CSS3绘制的自行车，使用CSS3动画，看上去自行车一直在转动</p>
                                 </div>
                             </div>
                         </div>
+                        <!--多背景变换-->
                         <div class="example">
                             <div class="example_border">
-                                <div class="example_img">
+                                <div class="example_img rback_img">
                                 </div>
                                 <div class="example_text">
-                                    <h4>大熊猫</h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <h4>多背景变换</h4>
+                                    <p>多个背景逐渐变换的效果，使用CSS3动画，效果很炫</p>
                                 </div>
                             </div>
                         </div>
+                        <!--立方体-->
                         <div class="example">
                             <div class="example_border">
-                                <div class="example_img">
+                                <div class="example_img cube_img">
                                 </div>
                                 <div class="example_text">
-                                    <h4>大熊猫</h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4>大熊猫</h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
+                                    <h4>立方体</h4>
+                                    <p>利用CSS3的3D转换制作一个立方体，再使用动画让立方体动起来</p>
                                 </div>
                             </div>
                         </div>
@@ -555,7 +547,11 @@
 <script src="js/jquery-2.2.3.min.js"></script>
 <script>
     $(function () {
-        $(window).load(function(){
+        fall();
+        $("nav.nav_left").height($(window).height());
+        //窗口大小改变以后重新计算大小
+        $(window).resize(function () {
+            $("nav.nav_left").height($(window).height());
             fall();
         });
         function fall(){
@@ -591,16 +587,12 @@
                 }
             }
         }
-        $(window).resize(function () {
-            $("nav.nav_left").height($(window).height());
-        });
         $("nav.nav_left ul li a").each(function () {
             $(this).on("click", function () {
                 $(this).closest("li").addClass("nav_current").siblings().removeClass("nav_current");
             });
 
         });
-        $("nav.nav_left").height($(window).height());
     })
 </script>
 </body>
