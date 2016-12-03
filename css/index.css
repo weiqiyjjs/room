@@ -1,0 +1,384 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding-left: 30px;
+  background: #3e999f;
+}
+
+.about {
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  top: 0;
+  right: 0;
+  line-height: 50px;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.about .la {
+  position: absolute;
+  top: 7px;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border-radius: 36px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.la img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+header h1 {
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.body {
+  height: 100%;
+  position: relative;
+}
+
+nav {
+  width: 300px;
+  height: 100%;
+  background: #1b1c1d;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav_title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.nav_title a {
+  display: block;
+  position: relative;
+}
+
+.nav_title img {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.nav_title span {
+  display: block;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  height: 40px;
+  line-height: 40px;
+  color: #FFFFFF;
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  padding-top: 20px;
+}
+
+nav ul li {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 16px;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+nav ul li a {
+  color: #676767;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+nav ul li a:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav_current {
+  background: #21b982;
+}
+
+.nav_current:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 50px;
+  background: #FFFFFF;
+  -webkit-animation: nav_cur_before 0.2s;
+  -o-animation: nav_cur_before 0.2s;
+  animation: nav_cur_before 0.2s;
+}
+
+/*.nav_current:after{*/
+/*content: "";*/
+/*display: block;*/
+/*position: absolute;*/
+/*left: 5px;*/
+/*top: 0;*/
+/*height:50px;*/
+/*background: #21b982;*/
+/*-webkit-animation:nav_cur 0.3s ease-in;*/
+/*-o-animation:nav_cur 0.3s ease-in;*/
+/*animation:nav_cur 0.3s ease-in forwards;*/
+/*}*/
+.nav_current a {
+  color: #FFFFFF;
+}
+
+@keyframes nav_cur_before {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*导航栏底部*/
+.nav_bottom {
+  margin-top: 20px;
+  border-top: 1px solid #FFFFFF;
+  padding-top: 20px;
+}
+
+.about_me {
+  position: relative;
+}
+
+.me_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 42px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+
+.me_img img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.me {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  height: 32px;
+}
+
+.me_name {
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+  color: #676767;
+  cursor: pointer;
+}
+
+.me_name:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/*右侧内容*/
+.container {
+  min-height: 1200px;
+  background: rgb(239, 239, 239);
+  position: absolute;
+  top: 0;
+  left: 300px;
+  right: 0;
+  width: auto;
+  padding: 20px;
+}
+
+.my_file {
+  height: auto;
+  background: #FFFFFF;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.container h2 {
+  font-size: 22px;
+  font-weight: 500;
+  border-left: 2px solid #66C6FD;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.content {
+  padding-left: 19px;
+}
+
+.content_box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #A6B7D0;
+}
+
+/*.content_box:after{*/
+/*content: "";*/
+/*display: block;*/
+/*clear: both;*/
+/*height:0;*/
+/*width: 100%;*/
+/*visibility: hidden;*/
+/*}*/
+/*.content_box_title{*/
+/*width: 15%;*/
+/*}*/
+.content_box_title h3 {
+  border: 2px solid #d4d3d3;
+  padding: 5px;
+  background: #bbb9b9;
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.content-box_body {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.content-box_body a {
+  line-height: 32px;
+  font-family: 华文黑体, "Microsoft YaHei", 微软雅黑, STHei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #676767;
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.content-box_body a:hover {
+  color: #333;
+}
+.example_body{
+  position: relative;
+}
+.example{
+  padding:5px;
+  float: left;
+}
+.example_border {
+  padding: 8px;
+  -webkit-box-shadow: inset 0 0 2px #bbbbbb;
+  -moz-box-shadow: inset 0 0 2px #bbbbbb;
+  box-shadow: inset 0 0 2px #bbbbbb;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.example_img {
+  width: 200px;
+  background: url(../img/panda.jpg);
+  -webkit-background-size: cover;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.example_text {
+  width: 200px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.example_text h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.example_text p {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.panda_img{
+  background: url(../img/panda.jpg);
+  height:200px;
+  background-size: cover;
+}
+.bike_img{
+  background: url(../img/bike.jpg);
+  height: 100px;
+  background-size: cover;
+}
+.rback_img{
+  background: url("../img/rback.jpg");
+  height: 100px;
+  background-size: cover;
+}
+.cube_img{
+  background: url("../img/cube.jpg");
+  height: 200px;
+  background-size: cover;
+}
+.photo_img{
+  background: url("../img/photo.jpg");
+  height: 150px;
+  background-size: cover;
+}
