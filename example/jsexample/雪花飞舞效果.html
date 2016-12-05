@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雪花效果</title>
+    <script src="../../js/jquery-2.2.3.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            overflow: hidden;
+        }
+        body{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(function(){
+        var time = 50;         //间隔时间
+        var flake =$("<div></div>").css("position","absolute").html("*");
+        var W=$(document).width();
+        var H = $(document).height();
+        setInterval(function(){
+            var startLeft = W*Math.random();
+            var endLeft  =W*Math.random();
+            var size = 30+30*Math.random();
+            var animate_time = 3000+5000*Math.random();
+            var opa1 = 0.7+ 0.3*Math.random();
+            var opa2 = 0.3+ 0.7*Math.random();
+            $("body").append(flake.clone().css({
+                "left":startLeft,
+                "font-size":size,
+                "top":"-55px",
+                "color":"#fff",
+                "opacity":opa1
+            }).animate({
+                "left":endLeft,
+                "top":H,
+                "opacity":opa2
+            },animate_time,function(){
+                $(this).remove();
+            }))
+        },time);
+    })
+</script>
+</body>
+</html>
