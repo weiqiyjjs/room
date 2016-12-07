@@ -113,7 +113,7 @@
                     <div class="content_box_title">
                         <h3>CSS3系列</h3>
                     </div>
-                    <div class="content-box_body example_body" id="example_body">
+                    <div class="content-box_body example_body" id="css3Show">
                         <!--大熊猫-->
                         <div class="example">
                             <div class="example_border">
@@ -171,61 +171,41 @@
                         </div>
                     </div>
                 </div>
+                <div class="content_box">
+                    <div class="content_box_title">
+                        <h3>canvas系列</h3>
+                    </div>
+                    <div class="content-box_body example_body" id="canvasShow">
+                        <!-- 炫酷的例子连线 -->
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img lizi_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4><a href="example/canvas/炫酷的粒子连线.html" target="_blank">炫酷的例子连线</a></h4>
+                                    <p>使用canvas绘制的很炫酷的粒子连线</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 百分比加载 -->
+                        <div class="example">
+                            <div class="example_border">
+                                <div class="example_img loading_img">
+                                </div>
+                                <div class="example_text">
+                                    <h4><a href="example/canvas/loading.html" target="_blank">百分比加载动画</a></h4>
+                                    <p>使用canvas绘制的可以百分比显示的动态加载动画</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script src="js/jquery-2.2.3.min.js"></script>
-<script>
-    $(function () {
-        fall();
-        $("nav.nav_left").height($(window).height());
-        //窗口大小改变以后重新计算大小
-        $(window).resize(function () {
-            $("nav.nav_left").height($(window).height());
-            fall();
-        });
-        function fall(){
-            var length = $("#example_body").find(".example").length;
-            var pWidth = $("#example_body").width();
-            var cWidth = $(".example").width()+10;
-            var size = parseInt(pWidth/cWidth);
-            var imgSize = [];
-            console.log(length,size,pWidth,cWidth);
-            for(var i = 0;i<length;i++){
-                if(i<size){
-                    imgSize[i] = $($("#example_body .example").get(i)).height()+20;
-                    console.log(imgSize[i]);
-                }else{
-                    var minHeight = Math.min.apply(null,imgSize);
-                    var min = getMin(imgSize,minHeight);
-                    $($("#example_body .example").get(i)).css({
-                        "position":"absolute",
-                        "top":minHeight+"px",
-                        "left":min*cWidth+20+"px"
-                    });
-                    imgSize[min] = imgSize[min]+$($("#example_body .example").get(i)).height()+10;
-                }
-                if(i===length-1){
-                    $("#example_body").height(Math.max.apply(null,imgSize));
-                }
-            }
-        }
-        function getMin(arr,value){
-            for(var i = 0;i<arr.length;i++){
-                if(arr[i] === value){
-                    return i;
-                }
-            }
-        }
-        $("nav.nav_left ul li a").each(function () {
-            $(this).on("click", function () {
-                $(this).closest("li").addClass("nav_current").siblings().removeClass("nav_current");
-            });
-
-        });
-    })
-</script>
+<script src="js/index.js"></script>
 </body>
 </html>
