@@ -409,3 +409,13 @@ nav ul li a:hover {
     height: 150px;
     background-size: cover;
 }
+.lizi_img{
+    background: url("../img/lizi.jpg");
+    height: 123px;
+    background-size: cover;
+}
+.loading_img{
+    background: url("../img/loading.jpg");
+    height: 200px;
+    background-size: cover;
+}
