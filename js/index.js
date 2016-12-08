@@ -2,6 +2,11 @@
  * Created by Administrator on 2016/12/7.
  */
 $(function () {
+    var bodyScroll = 0;
+    var communityScroll = $("#community").scrollTop();
+    var exampleScroll = $("#example").scrollTop();
+
+
     //页面完成时使用瀑布流方式加载
     fall();
 
@@ -14,10 +19,23 @@ $(function () {
         fall();
     });
 
+    //鼠标滑动事件
+    $(window).scroll(function(){
+        bodyScroll = $(document).scrollTop();
+        if(bodyScroll>=communityScroll && bodyScroll<=(communityScroll+$("#community").height())){
+            console.log("111");
+            $("#nav_community").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
+        }else if(bodyScroll>=exampleScroll && bodyScroll<=(exampleScroll+$("#example").height())){
+            console.log("222");
+            $("#nav_example").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
+        }
+    });
+
     //瀑布流方式显示
     function fall(){
         fallFunction("css3Show");
         fallFunction("canvasShow");
+        fallFunction("jsShow");
     }
 
     //传入id加载局部瀑布流
@@ -62,6 +80,36 @@ $(function () {
         $(this).on("click", function () {
             $(this).closest("li").addClass("nav_current").siblings().removeClass("nav_current");
         });
+    });
+
+    //点击导航时滚动
+    $("#nav_community").on("click",function(){
+        event.preventDefault();
+        var tar = getScroll("community");
+        $("body").animate({
+            scrollTop:tar
+        },500)
+    });
+    var set = null;
+    $("#nav_example").on("click",function(){
+        event.preventDefault();
+        var tar = getScroll("example");
+        $("body").animate({
+            scrollTop:tar
+        },500);
 
     });
+
+    //根据id获取该div距离网页最顶部的高度
+    function getScroll(id){
+        var t = document.getElementById(id);
+        var b = document.getElementsByTagName("body")[0];
+        var top = 0;
+        top = t.offsetTop;
+        while(t !== b){
+            t = t.offsetParent;
+            top+= t.offsetTop;
+        }
+        return top;
+    }
 })
