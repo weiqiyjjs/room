@@ -419,3 +419,18 @@ nav ul li a:hover {
     height: 200px;
     background-size: cover;
 }
+.fall1_img{
+    background: url("../img/fall1.jpg");
+    height: 110px;
+    background-size: cover;
+}
+.fall2_img{
+    background: url("../img/fall2.jpg");
+    height: 110px;
+    background-size: cover;
+}
+.xuehua_img{
+    background: url("../img/xuehua.jpg");
+    height: 190px;
+    background-size: cover;
+}
