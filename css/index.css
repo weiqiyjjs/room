@@ -409,3 +409,28 @@ nav ul li a:hover {
     height: 150px;
     background-size: cover;
 }
+.lizi_img{
+    background: url("../img/lizi.jpg");
+    height: 123px;
+    background-size: cover;
+}
+.loading_img{
+    background: url("../img/loading.jpg");
+    height: 200px;
+    background-size: cover;
+}
+.fall1_img{
+    background: url("../img/fall1.jpg");
+    height: 110px;
+    background-size: cover;
+}
+.fall2_img{
+    background: url("../img/fall2.jpg");
+    height: 110px;
+    background-size: cover;
+}
+.xuehua_img{
+    background: url("../img/xuehua.jpg");
+    height: 190px;
+    background-size: cover;
+}
