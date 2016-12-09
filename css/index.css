@@ -381,42 +381,42 @@ nav ul li a:hover {
 }
 
 .panda_img {
-    background: url(../img/panda.jpg);
+    background: url(../img/panda.gif);
     height: 200px;
     background-size: cover;
 }
 
 .bike_img {
-    background: url(../img/bike.jpg);
-    height: 100px;
+    background: url(../img/bike.gif);
+    height: 135px;
     background-size: cover;
 }
 
 .rback_img {
-    background: url("../img/rback.jpg");
+    background: url("../img/rback.gif");
     height: 100px;
     background-size: cover;
 }
 
 .cube_img {
-    background: url("../img/cube.jpg");
+    background: url("../img/cube.gif");
     height: 200px;
     background-size: cover;
 }
 
 .photo_img {
-    background: url("../img/photo.jpg");
-    height: 150px;
+    background: url("../img/photo.gif");
+    height: 83px;
     background-size: cover;
 }
 .lizi_img{
-    background: url("../img/lizi.jpg");
+    background: url("../img/lizi.gif");
     height: 123px;
     background-size: cover;
 }
 .loading_img{
-    background: url("../img/loading.jpg");
-    height: 200px;
+    background: url("../img/loading.gif");
+    height: 158px;
     background-size: cover;
 }
 .fall1_img{
@@ -430,7 +430,12 @@ nav ul li a:hover {
     background-size: cover;
 }
 .xuehua_img{
-    background: url("../img/xuehua.jpg");
+    background: url("../img/xuehua.gif");
     height: 190px;
+    background-size: cover;
+}
+.divmove_img{
+    background: url("../img/yidongmove.gif");
+    height: 180px;
     background-size: cover;
 }
