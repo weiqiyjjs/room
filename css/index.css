@@ -268,6 +268,9 @@ nav ul li a:hover {
     border-radius: 5px;
     padding: 40px;
     margin-bottom: 40px;
+    -webkit-box-shadow:  4px 4px 2px #bbb;
+    -moz-box-shadow:  4px 4px 2px #bbb;
+    box-shadow:  4px 4px 2px #bbb;
 }
 
 .container h2 {
@@ -309,6 +312,7 @@ nav ul li a:hover {
     text-align: center;
     font-size: 16px;
     color: #FFFFFF;
+    box-shadow: 4px 4px 2px #bbb;
 }
 
 .content-box_body {
