@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas粒子动画</title>
+    <style>
+        #canvas{
+            position: absolute;
+            display: block;
+            left:0;
+            top:0;
+            background: #0f0f0f;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" height="500px" width="1000px"></canvas>
+<script src="../js/jquery-2.2.3.min.js"></script>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var opt = {
+        particleAmount: 50,
+        defaultSpeed: 1,
+        variantSpeed: 1,
+        particleColor: "rgb(32,245,245)",
+        defaultRadius: 2,
+        variantRadius: 2
+    };
+    var particle = [], w,h;
+
+    init();
+
+    function init(){
+        getSize();
+        for(let i = 0;i<opt.particleAmount; i++){
+            particle.push(new Partical());
+        }
+        loop();
+    }
+
+    function loop(){
+        ctx.clearRect(0,0,w,h);
+        for(let i = 0;i<particle.length; i++){
+            particle[i].update();
+            console.log(particle[i].vector)
+            particle[i].draw();
+        }
+        window.requestAnimationFrame(loop);
+    }
+
+    function getSize(){
+        w = canvas.width = $(window).width()
+        h = canvas.height = $(window).height();
+    }
+    function Partical(){
+        this.x = Math.random()*w;
+        this.y = Math.random()*h;
+        this.speed = opt.defaultSpeed + opt.variantSpeed*Math.random();
+        this.directionAngle = Math.floor(Math.random()*360);
+        this.color = opt.particleColor ;
+        this.radius = opt.defaultRadius+Math.random()*opt.variantRadius;
+        this.vector = {
+            x:this.speed * Math.cos(this.directionAngle),
+            y:this.speed * Math.sin(this.directionAngle)
+        }
+        this.update = function(){
+            this.border();
+            this.x += this.vector.x;
+            this.y += this.vector.y;
+        }
+        this.border = function(){
+            if(this.x >= w || this.x<= 0){
+                this.vector.x *= -1;
+            }
+            if(this.y >= h || this.y <= 0){
+                this.vector.y *= -1;
+            }
+        }
+        this.draw = function(){
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius ,0 ,Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+</script>
+</body>
+</html>
