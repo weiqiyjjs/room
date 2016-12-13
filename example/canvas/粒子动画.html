@@ -15,7 +15,6 @@
 </head>
 <body>
 <canvas id="canvas" height="500px" width="1000px"></canvas>
-<script src="../js/jquery-2.2.3.min.js"></script>
 <script>
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -25,12 +24,24 @@
         defaultSpeed: 1,
         variantSpeed: 1,
         particleColor: "rgb(32,245,245)",
+        lineColor:"rgb(32,245,245)",
         defaultRadius: 2,
-        variantRadius: 2
+        variantRadius: 2,
+        minDistance: 200
     };
     var particle = [], w,h;
-
+    var delay = 200,tid;
     init();
+    window.addEventListener("resize",function(){
+        winResize()
+    },false);
+
+    function winResize(){
+        clearTimeout(tid);
+        tid = setTimeout(function(){
+            getSize();
+        },delay)
+    }
 
     function init(){
         getSize();
@@ -44,15 +55,38 @@
         ctx.clearRect(0,0,w,h);
         for(let i = 0;i<particle.length; i++){
             particle[i].update();
-            console.log(particle[i].vector)
             particle[i].draw();
+        }
+        for(let i = 0;i<particle.length; i++){
+            linePoint(particle[i],particle)
         }
         window.requestAnimationFrame(loop);
     }
 
+    function linePoint(point,hub){
+        for(let i = 0;i<hub.length;i++){
+            let distance = getDistance(point,hub[i]);
+            let opacity = 1 -distance/opt.minDistance;
+            if(opacity > 0){
+                ctx.lineWidth = 0.5;
+                ctx.strokeStyle = "rgba(32,245,245,"+opacity+")";
+                ctx.beginPath();
+                ctx.moveTo(point.x,point.y);
+                ctx.lineTo(hub[i].x,hub[i].y);
+                ctx.closePath();
+                ctx.stroke();
+            }
+        }
+    }
+
+    function getDistance(point1,point2){
+        return Math.sqrt(Math.pow(point1.x-point2.x,2) + Math.pow(point1.y - point2.y ,2));
+    }
+
     function getSize(){
-        w = canvas.width = $(window).width()
-        h = canvas.height = $(window).height();
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        console.log(w+"  "+ h);
     }
     function Partical(){
         this.x = Math.random()*w;
@@ -76,6 +110,18 @@
             }
             if(this.y >= h || this.y <= 0){
                 this.vector.y *= -1;
+            }
+            if(this.x > w){
+                this.x = w;
+            }
+            if(this.y > h){
+                this.y = h;
+            }
+            if(this.x < 0){
+                this.x = 0;
+            }
+            if(this.y < 0){
+                this.y = 0;
             }
         }
         this.draw = function(){
