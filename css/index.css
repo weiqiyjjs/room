@@ -293,17 +293,6 @@ nav ul li a:hover {
     border-bottom: 1px dashed #A6B7D0;
 }
 
-/*.content_box:after{*/
-/*content: "";*/
-/*display: block;*/
-/*clear: both;*/
-/*height:0;*/
-/*width: 100%;*/
-/*visibility: hidden;*/
-/*}*/
-/*.content_box_title{*/
-/*width: 15%;*/
-/*}*/
 .content_box_title h3 {
     border: 2px solid #d4d3d3;
     padding: 5px;
@@ -385,42 +374,42 @@ nav ul li a:hover {
 }
 
 .panda_img {
-    background: url(../img/panda.gif);
+    background: url(../img/panda.jpg);
     height: 200px;
     background-size: cover;
 }
 
 .bike_img {
-    background: url(../img/bike.gif);
-    height: 135px;
+    background: url(../img/bike.jpg);
+    height: 100px;
     background-size: cover;
 }
 
 .rback_img {
-    background: url("../img/rback.gif");
+    background: url("../img/rback.jpg");
     height: 100px;
     background-size: cover;
 }
 
 .cube_img {
-    background: url("../img/cube.gif");
+    background: url("../img/cube.jpg");
     height: 200px;
     background-size: cover;
 }
 
 .photo_img {
-    background: url("../img/photo.gif");
+    background: url("../img/photo.jpg");
     height: 83px;
     background-size: cover;
 }
 .lizi_img{
-    background: url("../img/lizi.gif");
+    background: url("../img/lizi.jpg");
     height: 123px;
     background-size: cover;
 }
 .loading_img{
-    background: url("../img/loading.gif");
-    height: 158px;
+    background: url("../img/loading.jpg");
+    height: 200px;
     background-size: cover;
 }
 .fall1_img{
@@ -434,12 +423,17 @@ nav ul li a:hover {
     background-size: cover;
 }
 .xuehua_img{
-    background: url("../img/xuehua.gif");
+    background: url("../img/xuehua.jpg");
     height: 190px;
     background-size: cover;
 }
 .divmove_img{
     background: url("../img/yidongmove.gif");
     height: 180px;
+    background-size: cover;
+}
+.lizidonghua_img{
+    background: url("../img/lizidonghua.jpg");
+    height: 88px;
     background-size: cover;
 }
