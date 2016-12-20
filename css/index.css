@@ -437,3 +437,8 @@ nav ul li a:hover {
     height: 88px;
     background-size: cover;
 }
+.worddrop_img{
+    background: url("../img/worddrop.jpg");
+    height: 110px;
+    background-size: cover;
+}
