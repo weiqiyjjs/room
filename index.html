@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-<div class="body">
+<div class="body" id="app">
     <!--导航栏-->
     <nav class="nav_left">
         <div class="nav_title">
@@ -86,13 +86,9 @@
                         <h3>前端大神</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
-                        <a href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰</a>
-                        <a href="http://www.zhangxinxu.com/wordpress/" target="_blank">张鑫旭</a>
-                        <a href="https://yuguo.us/weblog/" target="_blank">余果</a>
-                        <a href="http://www.cnblogs.com/Darren_code/" target="_blank">聂微东</a>
-                        <a href="http://jiongks.name/all-slides/" target="_blank">勾三股四</a>
-                        <a href="http://www.cnblogs.com/rubylouvre/" target="_blank">司徒正美</a>
+                        <span v-for="e in dashens">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--前端教程-->
@@ -114,60 +110,8 @@
                         <h3>CSS3系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="css3Show">
-                        <!--大熊猫-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img panda_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/panda.html" target="_blank">大熊猫</a> </h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--自行车-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img bike_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/bike.html" target="_blank">自行车</a></h4>
-                                    <p>由CSS3绘制的自行车，使用CSS3动画，看上去自行车一直在转动</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--多背景变换-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img rback_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/background.html" target="_blank">多背景变换</a></h4>
-                                    <p>多个背景逐渐变换的效果，使用CSS3动画，效果很炫</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--立方体-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img cube_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/cube.html" target="_blank">3D立方体</a></h4>
-                                    <p>利用CSS3的3D转换制作一个立方体，再使用动画让立方体动起来</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--3D相册-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img photo_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/photo.html" target="_blank">3D相册</a></h4>
-                                    <p>利用CSS3的3D转换制作的一个3D相册，再使用动画动起来</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in cssexams">
+                            <example v-bind:a="exam"></example>
                         </div>
                     </div>
                 </div>
@@ -176,49 +120,8 @@
                         <h3>canvas系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="canvasShow">
-                        <!-- 炫酷的例子连线 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img lizi_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/炫酷的粒子连线.html" target="_blank">炫酷的例子连线</a></h4>
-                                    <p>使用canvas绘制的很炫酷的粒子连线</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 百分比加载 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img loading_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/loading.html" target="_blank">百分比加载动画</a></h4>
-                                    <p>使用canvas绘制的可以百分比显示的动态加载动画</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- canvas网格动画 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img lizidonghua_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/粒子动画.html" target="_blank">粒子网格动画</a></h4>
-                                    <p>使用canvas绘制粒子网格动画</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 黑客帝国文字掉落效果 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img worddrop_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/worddrop.html" target="_blank">黑客帝国</a></h4>
-                                    <p>使用canvas完成类似黑客帝国中的文字掉落效果</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in canvasexams">
+                            <example v-bind:a="exam"></example>
                         </div>
                     </div>
                 </div>
@@ -227,49 +130,8 @@
                         <h3>js系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="jsShow">
-                        <!-- 瀑布流示例 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img fall1_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/瀑布流.html" target="_blank">瀑布流示例</a></h4>
-                                    <p>使用js完成瀑布流效果</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 瀑布流无限加载图片 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img fall2_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/瀑布流无限加载图片.html" target="_blank">图片瀑布流</a></h4>
-                                    <p>使用js完成瀑布流效果，并且可以无限加载图片</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--js雪花飞舞效果-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img xuehua_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/雪花飞舞效果.html" target="_blank">雪花效果</a></h4>
-                                    <p>使用js模拟雪花飞舞的效果</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--拖动-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img divmove_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/divmove.html" target="_blank">拖动效果</a></h4>
-                                    <p>适配移动端的拖动效果，可在Chrome下模式移动端设备测试</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in jsexams">
+                            <example v-bind:a="exam"></example>
                         </div>
                     </div>
                 </div>
@@ -277,8 +139,152 @@
         </div>
     </div>
 </div>
-
+<template id="example-demo">
+    <div class="example">
+        <div class="example_border">
+            <div class="example_img" :class="a.eClass">
+            </div>
+            <div class="example_text">
+                <h4><a :href="a.eSrc" target="_blank">{{a.eHead}}</a></h4>
+                <p>{{a.eDesc}}</p>
+            </div>
+        </div>
+    </div>
+</template>
 <script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    //定义模板
+    Vue.component("example",{
+        template:"#example-demo",
+        props:["a"],
+    });
+    var app = new Vue({
+        el:"#app",
+        data:{
+            //前端大神
+            dashens:[
+                {
+                    src:"http://www.liaoxuefeng.com/",
+                    des:"廖雪峰"
+                },
+                {
+                    src:"http://www.ruanyifeng.com/blog/",
+                    des:"阮一峰"
+                },
+                {
+                    src:"http://www.zhangxinxu.com/wordpress/",
+                    des:"张鑫旭"
+                },
+                {
+                    src:"https://yuguo.us/weblog/",
+                    des:"余果"
+                },
+                {
+                    src:"http://www.cnblogs.com/Darren_code/",
+                    des:"聂微东"
+                },
+                {
+                    src:"http://jiongks.name/all-slides/",
+                    des:"勾三股四"
+                },
+                {
+                    src:"http://www.cnblogs.com/rubylouvre/",
+                    des:"司徒正美"
+                },
+            ],
+            //CSS实例
+            cssexams:[
+                {
+                    eClass:"panda_img",
+                    eSrc:"example/CSS3/panda.html",
+                    eHead:"大熊猫",
+                    eDesc:"这是一个由CSS3绘制的大熊猫，很萌的呦"
+                },
+                {
+                    eClass:"bike_img",
+                    eSrc:"example/CSS3/bike.html",
+                    eHead:"自行车",
+                    eDesc:"由CSS3绘制的自行车，使用CSS3动画，看上去自行车一直在转动"
+                },
+                {
+                    eClass:"rback_img",
+                    eSrc:"example/CSS3/background.html",
+                    eHead:"多背景变换",
+                    eDesc:"多个背景逐渐变换的效果，使用CSS3动画，效果很炫"
+                },
+                {
+                    eClass:"cube_img",
+                    eSrc:"example/CSS3/cube.html",
+                    eHead:"3D立方体",
+                    eDesc:"利用CSS3的3D转换制作一个立方体，再使用动画让立方体动起来"
+                },
+                {
+                    eClass:"photo_img",
+                    eSrc:"example/CSS3/photo.html",
+                    eHead:"3D相册",
+                    eDesc:"利用CSS3的3D转换制作的一个3D相册，再使用动画动起来"
+                }
+            ],
+            //canvas实例
+            canvasexams:[
+                {
+                    eClass:"lizi_img",
+                    eSrc:"example/canvas/炫酷的粒子连线.html",
+                    eHead:"炫酷的例子连线",
+                    eDesc:"使用canvas绘制的很炫酷的粒子连线"
+                },
+                {
+                    eClass:"loading_img",
+                    eSrc:"example/canvas/loading.html",
+                    eHead:"百分比加载动画",
+                    eDesc:"使用canvas绘制的可以百分比显示的动态加载动画"
+                },
+                {
+                    eClass:"lizidonghua_img",
+                    eSrc:"example/canvas/粒子动画.html",
+                    eHead:"粒子网格动画",
+                    eDesc:"使用canvas绘制粒子网格动画"
+                },
+                {
+                    eClass:"worddrop_img",
+                    eSrc:"example/canvas/worddrop.html",
+                    eHead:"黑客帝国",
+                    eDesc:"使用canvas完成类似黑客帝国中的文字掉落效果"
+                }
+            ],
+            //js实例
+            jsexams:[
+                {
+                    eClass:"fall1_img",
+                    eSrc:"example/jsexample/瀑布流.html",
+                    eHead:"瀑布流示例",
+                    eDesc:"使用js完成瀑布流效果"
+                },
+                {
+                    eClass:"fall2_img",
+                    eSrc:"example/jsexample/瀑布流无限加载图片.html",
+                    eHead:"图片瀑布流",
+                    eDesc:"使用js完成瀑布流效果，并且可以无限加载图片"
+                },
+                {
+                    eClass:"xuehua_img",
+                    eSrc:"example/jsexample/雪花飞舞效果.html",
+                    eHead:"雪花效果",
+                    eDesc:"使用js模拟雪花飞舞的效果"
+                },
+                {
+                    eClass:"divmove_img",
+                    eSrc:"example/jsexample/divmove.html",
+                    eHead:"拖动效果",
+                    eDesc:"适配移动端的拖动效果，可在Chrome下模式移动端设备测试"
+                }
+            ]
+
+        }
+    });
+
+</script>
 <script src="js/index.js"></script>
 </body>
 </html>
