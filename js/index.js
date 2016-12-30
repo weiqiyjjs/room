@@ -48,7 +48,6 @@ $(function () {
         for(var i = 0;i<length;i++){
             if(i<size){
                 imgSize[i] = $($("#"+id).find(".example").get(i)).height()+20;
-                console.log(imgSize[i]);
             }else{
                 var minHeight = Math.min.apply(null,imgSize);
                 var min = getMin(imgSize,minHeight);
@@ -61,7 +60,6 @@ $(function () {
             }
             if(i===length-1){
                 $("#"+id).height(Math.max.apply(null,imgSize));
-                console.log($("#"+id).height(Math.max.apply(null,imgSize)));
             }
         }
     }
