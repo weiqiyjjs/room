@@ -24,8 +24,9 @@
                 </div>
                 <div class="me">
                     <a class="me_name" target="_blank" href="http://blog.csdn.net/u014346301">卫旗</a>
-                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301"><img
-                            src="icon/blog2.png"/></a>
+                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301">
+                        <img src="icon/blog2.png"/>
+                    </a>
                 </div>
             </div>
         </div>
@@ -41,24 +42,9 @@
                         <h3>国内综合</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="https://www.w3ctech.com/" target="_blank">w3ctech</a>
-                        <a href="http://www.w3cplus.com/" target="_blank">w3cplus</a>
-                        <a href="http://www.qdfuns.com/" target="_blank">w3cfuns</a>
-                        <a href="http://www.html-js.com/" target="_blank">前端乱炖</a>
-                        <a href="https://www.qianduan.net/" target="_blank">前端观察</a>
-                        <a href="https://segmentfault.com/" target="_blank">segmentfault</a>
-                        <a href="http://www.html5tricks.com/" target="_blank">html5tricks</a>
-                        <a href="http://isux.tencent.com/" target="_blank">腾讯ISUX</a>
-                        <a href="http://efe.baidu.com/" target="_blank">百度EFE</a>
-                        <a href="http://www.75team.com/weekly/" target="_blank">奇舞团</a>
-                        <a href="http://www.yyyweb.com/" target="_blank">前端里</a>
-                        <a href="http://div.io/#/welcome" target="_blank">div.io</a>
-                        <a href="http://www.css88.com/" target="_blank">web前端开发</a>
-                        <a href="http://caibaojian.com/" target="_blank">前端开发博客</a>
-                        <a href="http://wx.h5.vc/" target="_blank">爱奇舞-H5.vc</a>
-                        <a href="http://www.kancloud.cn/explore" target="_blank">看云</a>
-                        <a href="http://www.hubwiz.com/" target="_blank">汇智网</a>
-                        <a href="http://blog.jobbole.com/" target="_blank">伯乐在线</a>
+                        <span v-for="e in zonghe">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--问答社区-->
@@ -67,7 +53,9 @@
                         <h3>问答社区</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+                        <span v-for="e in wenda">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--每日最新-->
@@ -76,10 +64,9 @@
                         <h3>每日最新</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://gold.xitu.io/" target="_blank">稀土掘金</a>
-                        <a href="https://toutiao.io/" target="_blank">开发者头条</a>
-                        <a href="http://geek.csdn.net/" target="_blank">极客头条</a>
-                        <a href="http://hao.caibaojian.com/" target="_blank">开发头条</a>
+                        <span v-for="e in zuixin">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--前端大神-->
@@ -99,7 +86,9 @@
                         <h3>前端教程</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://www.imooc.com/" target="_blank">慕课网</a>
+                        <span v-for="e in jiaocheng">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -147,15 +136,14 @@
                         <h3>jquery幻灯片插件</h3>
                     </div>
                     <div class="content-box_body">
-                        <h1>Hello world</h1>
-                    </div>
-                </div>
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>jquery幻灯片插件</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <h1>Hello world</h1>
+                        <p>这是一个基本的界面：</p>
+                        <img class="img_plugin" src="img/plugin1.jpg">
+                        <p>
+                            具体效果，请<a href="https://weiqiyjjs.github.io/jquery.carousel/" target="_blank">点击这里</a>查看
+                        </p>
+                        <p>
+                            详细信息及下载、使用，请<a href="https://github.com/weiqiyjjs/jquery.carousel" target="_blank">点击这里</a>查看
+                        </p>
                     </div>
                 </div>
             </div>

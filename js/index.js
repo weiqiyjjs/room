@@ -2,13 +2,6 @@
  * Created by Administrator on 2016/12/7.
  */
 $(function () {
-    var bodyScroll = 0;
-
-    //计算滚动位置
-    var communityScroll = $("#community").scrollTop();
-    var exampleScroll = $("#example").scrollTop();
-    var pluginScroll = $("#plugin").scrollTop();
-
     //页面完成时使用瀑布流方式加载
     fall();
 
@@ -21,6 +14,11 @@ $(function () {
         fall();
     });
 
+    ////计算滚动位置
+    //var bodyScroll = 0;
+    //var communityScroll = $("#community").scrollTop();
+    //var exampleScroll = $("#example").scrollTop();
+    //var pluginScroll = $("#plugin").scrollTop();
     ////鼠标滑动事件
     //$(window).scroll(function(){
     //    bodyScroll = $(document).scrollTop();
