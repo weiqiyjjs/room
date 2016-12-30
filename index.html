@@ -15,6 +15,7 @@
         <ul>
             <li class="nav_current"><a href="#community" id="nav_community">前端社区</a></li>
             <li><a href="#example" id="nav_example">实验室的实验品</a></li>
+            <li><a href="#plugin" id="nav_plugin">我的插件库</a></li>
         </ul>
         <div class="nav_bottom">
             <div class="about_me">
@@ -23,7 +24,8 @@
                 </div>
                 <div class="me">
                     <a class="me_name" target="_blank" href="http://blog.csdn.net/u014346301">卫旗</a>
-                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301"><img src="icon/blog2.png"/></a>
+                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301"><img
+                            src="icon/blog2.png"/></a>
                 </div>
             </div>
         </div>
@@ -137,8 +139,30 @@
                 </div>
             </div>
         </div>
+        <div class="my_file" id="plugin">
+            <h2>我的插件库</h2>
+            <div class="content">
+                <div class="content_box">
+                    <div class="content_box_title">
+                        <h3>jquery幻灯片插件</h3>
+                    </div>
+                    <div class="content-box_body">
+                        <h1>Hello world</h1>
+                    </div>
+                </div>
+                <div class="content_box">
+                    <div class="content_box_title">
+                        <h3>jquery幻灯片插件</h3>
+                    </div>
+                    <div class="content-box_body">
+                        <h1>Hello world</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<!--vue模板-->
 <template id="example-demo">
     <div class="example">
         <div class="example_border">
@@ -153,138 +177,7 @@
 </template>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/vue.js"></script>
-<script>
-    //定义模板
-    Vue.component("example",{
-        template:"#example-demo",
-        props:["a"],
-    });
-    var app = new Vue({
-        el:"#app",
-        data:{
-            //前端大神
-            dashens:[
-                {
-                    src:"http://www.liaoxuefeng.com/",
-                    des:"廖雪峰"
-                },
-                {
-                    src:"http://www.ruanyifeng.com/blog/",
-                    des:"阮一峰"
-                },
-                {
-                    src:"http://www.zhangxinxu.com/wordpress/",
-                    des:"张鑫旭"
-                },
-                {
-                    src:"https://yuguo.us/weblog/",
-                    des:"余果"
-                },
-                {
-                    src:"http://www.cnblogs.com/Darren_code/",
-                    des:"聂微东"
-                },
-                {
-                    src:"http://jiongks.name/all-slides/",
-                    des:"勾三股四"
-                },
-                {
-                    src:"http://www.cnblogs.com/rubylouvre/",
-                    des:"司徒正美"
-                },
-            ],
-            //CSS实例
-            cssexams:[
-                {
-                    eClass:"panda_img",
-                    eSrc:"example/CSS3/panda.html",
-                    eHead:"大熊猫",
-                    eDesc:"这是一个由CSS3绘制的大熊猫，很萌的呦"
-                },
-                {
-                    eClass:"bike_img",
-                    eSrc:"example/CSS3/bike.html",
-                    eHead:"自行车",
-                    eDesc:"由CSS3绘制的自行车，使用CSS3动画，看上去自行车一直在转动"
-                },
-                {
-                    eClass:"rback_img",
-                    eSrc:"example/CSS3/background.html",
-                    eHead:"多背景变换",
-                    eDesc:"多个背景逐渐变换的效果，使用CSS3动画，效果很炫"
-                },
-                {
-                    eClass:"cube_img",
-                    eSrc:"example/CSS3/cube.html",
-                    eHead:"3D立方体",
-                    eDesc:"利用CSS3的3D转换制作一个立方体，再使用动画让立方体动起来"
-                },
-                {
-                    eClass:"photo_img",
-                    eSrc:"example/CSS3/photo.html",
-                    eHead:"3D相册",
-                    eDesc:"利用CSS3的3D转换制作的一个3D相册，再使用动画动起来"
-                }
-            ],
-            //canvas实例
-            canvasexams:[
-                {
-                    eClass:"lizi_img",
-                    eSrc:"example/canvas/炫酷的粒子连线.html",
-                    eHead:"炫酷的例子连线",
-                    eDesc:"使用canvas绘制的很炫酷的粒子连线"
-                },
-                {
-                    eClass:"loading_img",
-                    eSrc:"example/canvas/loading.html",
-                    eHead:"百分比加载动画",
-                    eDesc:"使用canvas绘制的可以百分比显示的动态加载动画"
-                },
-                {
-                    eClass:"lizidonghua_img",
-                    eSrc:"example/canvas/粒子动画.html",
-                    eHead:"粒子网格动画",
-                    eDesc:"使用canvas绘制粒子网格动画"
-                },
-                {
-                    eClass:"worddrop_img",
-                    eSrc:"example/canvas/worddrop.html",
-                    eHead:"黑客帝国",
-                    eDesc:"使用canvas完成类似黑客帝国中的文字掉落效果"
-                }
-            ],
-            //js实例
-            jsexams:[
-                {
-                    eClass:"fall1_img",
-                    eSrc:"example/jsexample/瀑布流.html",
-                    eHead:"瀑布流示例",
-                    eDesc:"使用js完成瀑布流效果"
-                },
-                {
-                    eClass:"fall2_img",
-                    eSrc:"example/jsexample/瀑布流无限加载图片.html",
-                    eHead:"图片瀑布流",
-                    eDesc:"使用js完成瀑布流效果，并且可以无限加载图片"
-                },
-                {
-                    eClass:"xuehua_img",
-                    eSrc:"example/jsexample/雪花飞舞效果.html",
-                    eHead:"雪花效果",
-                    eDesc:"使用js模拟雪花飞舞的效果"
-                },
-                {
-                    eClass:"divmove_img",
-                    eSrc:"example/jsexample/divmove.html",
-                    eHead:"拖动效果",
-                    eDesc:"适配移动端的拖动效果，可在Chrome下模式移动端设备测试"
-                }
-            ]
-
-        }
-    });
-
-</script>
+<script src="js/template.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

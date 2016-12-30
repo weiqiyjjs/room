@@ -294,10 +294,11 @@ nav ul li a:hover {
 }
 
 .content_box_title h3 {
+    display: inline-block;
     border: 2px solid #d4d3d3;
     padding: 5px;
     background: #bbb9b9;
-    width: 80px;
+    min-width: 80px;
     text-align: center;
     font-size: 16px;
     color: #FFFFFF;
