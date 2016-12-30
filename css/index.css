@@ -249,6 +249,10 @@ nav ul li a:hover {
 }
 
 /*右侧内容*/
+p{
+    line-height:30px;
+    font-family: microsoft yahei;
+}
 .container {
     min-height: 1200px;
     background: rgb(239, 239, 239);
@@ -260,6 +264,7 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+/*左侧内容*/
 .my_file {
     height: auto;
     background: #FFFFFF;
@@ -294,10 +299,11 @@ nav ul li a:hover {
 }
 
 .content_box_title h3 {
+    display: inline-block;
     border: 2px solid #d4d3d3;
     padding: 5px;
     background: #bbb9b9;
-    width: 80px;
+    min-width: 80px;
     text-align: center;
     font-size: 16px;
     color: #FFFFFF;
@@ -441,4 +447,14 @@ nav ul li a:hover {
     background: url("../img/worddrop.jpg");
     height: 110px;
     background-size: cover;
+}
+/*插件库部分*/
+#plugin iframe{
+    display: block;
+    width:100%;
+}
+.img_plugin{
+    display: block;
+    width:90%;
+    height:auto;
 }

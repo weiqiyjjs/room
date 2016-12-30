@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-<div class="body">
+<div class="body" id="app">
     <!--导航栏-->
     <nav class="nav_left">
         <div class="nav_title">
@@ -15,6 +15,7 @@
         <ul>
             <li class="nav_current"><a href="#community" id="nav_community">前端社区</a></li>
             <li><a href="#example" id="nav_example">实验室的实验品</a></li>
+            <li><a href="#plugin" id="nav_plugin">我的插件库</a></li>
         </ul>
         <div class="nav_bottom">
             <div class="about_me">
@@ -23,7 +24,9 @@
                 </div>
                 <div class="me">
                     <a class="me_name" target="_blank" href="http://blog.csdn.net/u014346301">卫旗</a>
-                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301"><img src="icon/blog2.png"/></a>
+                    <a class="me_blog" target="_blank" href="http://blog.csdn.net/u014346301">
+                        <img src="icon/blog2.png"/>
+                    </a>
                 </div>
             </div>
         </div>
@@ -39,24 +42,9 @@
                         <h3>国内综合</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="https://www.w3ctech.com/" target="_blank">w3ctech</a>
-                        <a href="http://www.w3cplus.com/" target="_blank">w3cplus</a>
-                        <a href="http://www.qdfuns.com/" target="_blank">w3cfuns</a>
-                        <a href="http://www.html-js.com/" target="_blank">前端乱炖</a>
-                        <a href="https://www.qianduan.net/" target="_blank">前端观察</a>
-                        <a href="https://segmentfault.com/" target="_blank">segmentfault</a>
-                        <a href="http://www.html5tricks.com/" target="_blank">html5tricks</a>
-                        <a href="http://isux.tencent.com/" target="_blank">腾讯ISUX</a>
-                        <a href="http://efe.baidu.com/" target="_blank">百度EFE</a>
-                        <a href="http://www.75team.com/weekly/" target="_blank">奇舞团</a>
-                        <a href="http://www.yyyweb.com/" target="_blank">前端里</a>
-                        <a href="http://div.io/#/welcome" target="_blank">div.io</a>
-                        <a href="http://www.css88.com/" target="_blank">web前端开发</a>
-                        <a href="http://caibaojian.com/" target="_blank">前端开发博客</a>
-                        <a href="http://wx.h5.vc/" target="_blank">爱奇舞-H5.vc</a>
-                        <a href="http://www.kancloud.cn/explore" target="_blank">看云</a>
-                        <a href="http://www.hubwiz.com/" target="_blank">汇智网</a>
-                        <a href="http://blog.jobbole.com/" target="_blank">伯乐在线</a>
+                        <span v-for="e in zonghe">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--问答社区-->
@@ -65,7 +53,9 @@
                         <h3>问答社区</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+                        <span v-for="e in wenda">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--每日最新-->
@@ -74,10 +64,9 @@
                         <h3>每日最新</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://gold.xitu.io/" target="_blank">稀土掘金</a>
-                        <a href="https://toutiao.io/" target="_blank">开发者头条</a>
-                        <a href="http://geek.csdn.net/" target="_blank">极客头条</a>
-                        <a href="http://hao.caibaojian.com/" target="_blank">开发头条</a>
+                        <span v-for="e in zuixin">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--前端大神-->
@@ -86,13 +75,9 @@
                         <h3>前端大神</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
-                        <a href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰</a>
-                        <a href="http://www.zhangxinxu.com/wordpress/" target="_blank">张鑫旭</a>
-                        <a href="https://yuguo.us/weblog/" target="_blank">余果</a>
-                        <a href="http://www.cnblogs.com/Darren_code/" target="_blank">聂微东</a>
-                        <a href="http://jiongks.name/all-slides/" target="_blank">勾三股四</a>
-                        <a href="http://www.cnblogs.com/rubylouvre/" target="_blank">司徒正美</a>
+                        <span v-for="e in dashens">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
                 <!--前端教程-->
@@ -101,7 +86,9 @@
                         <h3>前端教程</h3>
                     </div>
                     <div class="content-box_body">
-                        <a href="http://www.imooc.com/" target="_blank">慕课网</a>
+                        <span v-for="e in jiaocheng">
+                            <a :href="e.src" target="_blank">{{e.des}}</a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -114,60 +101,8 @@
                         <h3>CSS3系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="css3Show">
-                        <!--大熊猫-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img panda_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/panda.html" target="_blank">大熊猫</a> </h4>
-                                    <p>这是一个由CSS3绘制的大熊猫，很萌的呦</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--自行车-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img bike_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/bike.html" target="_blank">自行车</a></h4>
-                                    <p>由CSS3绘制的自行车，使用CSS3动画，看上去自行车一直在转动</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--多背景变换-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img rback_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/background.html" target="_blank">多背景变换</a></h4>
-                                    <p>多个背景逐渐变换的效果，使用CSS3动画，效果很炫</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--立方体-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img cube_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/cube.html" target="_blank">3D立方体</a></h4>
-                                    <p>利用CSS3的3D转换制作一个立方体，再使用动画让立方体动起来</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--3D相册-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img photo_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/CSS3/photo.html" target="_blank">3D相册</a></h4>
-                                    <p>利用CSS3的3D转换制作的一个3D相册，再使用动画动起来</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in cssexams">
+                            <example v-bind:a="exam"></example>
                         </div>
                     </div>
                 </div>
@@ -176,49 +111,8 @@
                         <h3>canvas系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="canvasShow">
-                        <!-- 炫酷的例子连线 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img lizi_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/炫酷的粒子连线.html" target="_blank">炫酷的例子连线</a></h4>
-                                    <p>使用canvas绘制的很炫酷的粒子连线</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 百分比加载 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img loading_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/loading.html" target="_blank">百分比加载动画</a></h4>
-                                    <p>使用canvas绘制的可以百分比显示的动态加载动画</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- canvas网格动画 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img lizidonghua_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/粒子动画.html" target="_blank">粒子网格动画</a></h4>
-                                    <p>使用canvas绘制粒子网格动画</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 黑客帝国文字掉落效果 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img worddrop_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/canvas/worddrop.html" target="_blank">黑客帝国</a></h4>
-                                    <p>使用canvas完成类似黑客帝国中的文字掉落效果</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in canvasexams">
+                            <example v-bind:a="exam"></example>
                         </div>
                     </div>
                 </div>
@@ -227,58 +121,51 @@
                         <h3>js系列</h3>
                     </div>
                     <div class="content-box_body example_body" id="jsShow">
-                        <!-- 瀑布流示例 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img fall1_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/瀑布流.html" target="_blank">瀑布流示例</a></h4>
-                                    <p>使用js完成瀑布流效果</p>
-                                </div>
-                            </div>
+                        <div v-for="exam in jsexams">
+                            <example v-bind:a="exam"></example>
                         </div>
-                        <!-- 瀑布流无限加载图片 -->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img fall2_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/瀑布流无限加载图片.html" target="_blank">图片瀑布流</a></h4>
-                                    <p>使用js完成瀑布流效果，并且可以无限加载图片</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--js雪花飞舞效果-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img xuehua_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/雪花飞舞效果.html" target="_blank">雪花效果</a></h4>
-                                    <p>使用js模拟雪花飞舞的效果</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--拖动-->
-                        <div class="example">
-                            <div class="example_border">
-                                <div class="example_img divmove_img">
-                                </div>
-                                <div class="example_text">
-                                    <h4><a href="example/jsexample/divmove.html" target="_blank">拖动效果</a></h4>
-                                    <p>适配移动端的拖动效果，可在Chrome下模式移动端设备测试</p>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my_file" id="plugin">
+            <h2>我的插件库</h2>
+            <div class="content">
+                <div class="content_box">
+                    <div class="content_box_title">
+                        <h3>jquery幻灯片插件</h3>
+                    </div>
+                    <div class="content-box_body">
+                        <p>这是一个基本的界面：</p>
+                        <img class="img_plugin" src="img/plugin1.jpg">
+                        <p>
+                            具体效果，请<a href="https://weiqiyjjs.github.io/jquery.carousel/" target="_blank">点击这里</a>查看
+                        </p>
+                        <p>
+                            详细信息及下载、使用，请<a href="https://github.com/weiqiyjjs/jquery.carousel" target="_blank">点击这里</a>查看
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<!--vue模板-->
+<template id="example-demo">
+    <div class="example">
+        <div class="example_border">
+            <div class="example_img" :class="a.eClass">
+            </div>
+            <div class="example_text">
+                <h4><a :href="a.eSrc" target="_blank">{{a.eHead}}</a></h4>
+                <p>{{a.eDesc}}</p>
+            </div>
+        </div>
+    </div>
+</template>
 <script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/template.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

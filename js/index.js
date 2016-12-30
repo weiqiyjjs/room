@@ -2,11 +2,6 @@
  * Created by Administrator on 2016/12/7.
  */
 $(function () {
-    var bodyScroll = 0;
-    var communityScroll = $("#community").scrollTop();
-    var exampleScroll = $("#example").scrollTop();
-
-
     //页面完成时使用瀑布流方式加载
     fall();
 
@@ -19,17 +14,22 @@ $(function () {
         fall();
     });
 
-    //鼠标滑动事件
-    $(window).scroll(function(){
-        bodyScroll = $(document).scrollTop();
-        if(bodyScroll>=communityScroll && bodyScroll<=(communityScroll+$("#community").height())){
-            console.log("111");
-            $("#nav_community").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
-        }else if(bodyScroll>=exampleScroll && bodyScroll<=(exampleScroll+$("#example").height())){
-            console.log("222");
-            $("#nav_example").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
-        }
-    });
+    ////计算滚动位置
+    //var bodyScroll = 0;
+    //var communityScroll = $("#community").scrollTop();
+    //var exampleScroll = $("#example").scrollTop();
+    //var pluginScroll = $("#plugin").scrollTop();
+    ////鼠标滑动事件
+    //$(window).scroll(function(){
+    //    bodyScroll = $(document).scrollTop();
+    //    if(bodyScroll>=communityScroll && bodyScroll<=(communityScroll+$("#community").height())){
+    //        $("#nav_community").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
+    //    }else if(bodyScroll>=exampleScroll && bodyScroll<=(exampleScroll+$("#example").height())){
+    //        $("#nav_example").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
+    //    }else if(bodyScroll>=pluginScroll && bodyScroll<=(pluginScroll+$("#plugin").height())){
+    //        $("#nav_plugin").closest("li").addClass("nav_current").siblings().removeClass("nav_current");
+    //    }
+    //});
 
     //瀑布流方式显示
     function fall(){
@@ -90,14 +90,19 @@ $(function () {
             scrollTop:tar
         },500)
     });
-    var set = null;
     $("#nav_example").on("click",function(){
         event.preventDefault();
         var tar = getScroll("example");
         $("body").animate({
             scrollTop:tar
         },500);
-
+    });
+    $("#nav_plugin").on("click",function(){
+        event.preventDefault();
+        var tar = getScroll("plugin");
+        $("body").animate({
+            scrollTop:tar
+        },500);
     });
 
     //根据id获取该div距离网页最顶部的高度
