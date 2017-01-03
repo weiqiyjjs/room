@@ -378,7 +378,8 @@ p{
     line-height: 16px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+/*实验室展示预览图部分*/
+/*css3d*/
 .panda_img {
     background: url(../img/panda.jpg);
     height: 200px;
@@ -401,6 +402,11 @@ p{
     background: url("../img/cube.jpg");
     height: 200px;
     background-size: cover;
+}
+.photo_3d{
+    background: url("../img/3d.png");
+    height: 200px;
+    background-size: cover
 }
 
 .photo_img {

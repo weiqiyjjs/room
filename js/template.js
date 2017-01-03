@@ -2,13 +2,14 @@
  * Created by Administrator on 2016/12/30.
  * author :卫旗
  */
-//定义模板
+//定义模板，我的实验室：每个系列的模板
 Vue.component("example", {
     template: "#template-example-demo",
     props: ["a"],
 });
+//前端社区模板
 Vue.component("content-box",{
-    template:"#template-content-box",
+    template:"#template-content-shequ",
     props:["content"]
 });
 Vue.component("template-example",{
@@ -18,6 +19,7 @@ Vue.component("template-example",{
 var app = new Vue({
     el: "#app",
     data: {
+        //前端社区模板对象
         contents:[
             //国内综合
             {
@@ -188,6 +190,12 @@ var app = new Vue({
                 eSrc: "example/CSS3/photo.html",
                 eHead: "3D相册",
                 eDesc: "利用CSS3的3D转换制作的一个3D相册，再使用动画动起来"
+            },
+            {
+                eClass: "photo_3d",
+                eSrc: "example/CSS3/3d.html",
+                eHead: "CSS3 3D炫酷旋转动画",
+                eDesc: "两个3D立方体，hover状态时第一个散开"
             }
         ],
         //canvas实例
