@@ -5,8 +5,8 @@
     <title>前端实验室</title>
     <link rel="stylesheet" href="css/index.css"/>
 </head>
-<body>
-<div class="body" id="app">
+<body id="app">
+<div class="body">
     <!--导航栏-->
     <nav class="nav_left">
         <div class="nav_title">
@@ -31,65 +31,14 @@
             </div>
         </div>
     </nav>
+
     <!--内容-->
     <div class="container">
         <div class="my_file" id="community">
             <h2>前端社区</h2>
             <div class="content">
-                <!--国内综合-->
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>国内综合</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <span v-for="e in zonghe">
-                            <a :href="e.src" target="_blank">{{e.des}}</a>
-                        </span>
-                    </div>
-                </div>
-                <!--问答社区-->
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>问答社区</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <span v-for="e in wenda">
-                            <a :href="e.src" target="_blank">{{e.des}}</a>
-                        </span>
-                    </div>
-                </div>
-                <!--每日最新-->
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>每日最新</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <span v-for="e in zuixin">
-                            <a :href="e.src" target="_blank">{{e.des}}</a>
-                        </span>
-                    </div>
-                </div>
-                <!--前端大神-->
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>前端大神</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <span v-for="e in dashens">
-                            <a :href="e.src" target="_blank">{{e.des}}</a>
-                        </span>
-                    </div>
-                </div>
-                <!--前端教程-->
-                <div class="content_box">
-                    <div class="content_box_title">
-                        <h3>前端教程</h3>
-                    </div>
-                    <div class="content-box_body">
-                        <span v-for="e in jiaocheng">
-                            <a :href="e.src" target="_blank">{{e.des}}</a>
-                        </span>
-                    </div>
+                <div v-for="content in contents">
+                    <content-box v-bind:content="content"></content-box>
                 </div>
             </div>
         </div>
@@ -150,8 +99,8 @@
         </div>
     </div>
 </div>
-<!--vue模板-->
-<template id="example-demo">
+<!--vue模板：实验室中 content-box_body中 -->
+<template id="template-example-demo">
     <div class="example">
         <div class="example_border">
             <div class="example_img" :class="a.eClass">
@@ -160,6 +109,20 @@
                 <h4><a :href="a.eSrc" target="_blank">{{a.eHead}}</a></h4>
                 <p>{{a.eDesc}}</p>
             </div>
+        </div>
+    </div>
+</template>
+
+<!--前端社区：content-box模板-->
+<template id="template-content-shequ">
+    <div class="content_box">
+        <div class="content_box_title">
+            <h3>{{content.title}}</h3>
+        </div>
+        <div class="content-box_body">
+            <span v-for="e in content.type">
+                    <a :href="e.src" target="_blank">{{e.des}}</a>
+            </span>
         </div>
     </div>
 </template>
