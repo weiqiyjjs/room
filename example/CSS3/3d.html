@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3D旋转</title>
+	<style type="text/css">
+		.wrap{
+			width: 650px;
+			height: 200px;
+			margin: 150px 360px;
+			position: relative;
+		}
+		.cube{
+			position: relative;
+			width:200px;
+			height:200px;
+			margin:0 auto;
+			-webkit-transform-style:preserve-3d;
+					transform-style:preserve-3d;
+			-webkit-transform:rotateX(-30deg) rotateY(-80deg);
+					transform:rotateX(-30deg) rotateX(-80deg);
+			-webkit-animation:rotate 20s infinite;
+					animation:rotate 20s infinite;
+			animation-timing-function:linear;
+		}
+		@-webkit-keyframes rotate{
+			from{transform:rotateX(0deg) rotateY(0deg);}
+			to{transform:rotateX(360deg) rotateY(360deg);}
+		}
+		@keyframes rotate{
+			from{transform:rotateX(0deg) rotateY(0deg);}
+			to{transform:rotateX(360deg) rotateY(360deg);}
+		}
+		.cube div{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			opacity: 0.8;
+			transition:all .4s;
+		}
+		.cube .out_front{
+			background-color: yellow;
+			transform:rotateY(0deg) translateZ(100px);
+		}
+		.cube .out_back{
+			background-color: red;
+			transform:translateZ(-100px) rotateY(180deg);
+		}
+		.cube .out_left{
+			background-color: black;
+			transform:rotateY(90deg) translateZ(100px);
+		}
+		.cube .out_right{
+			background-color: blue;
+			transform:rotateY(-90deg) translateZ(100px);
+		}
+		.cube .out_top{
+			background-color: green;
+			transform:rotateX(90deg) translateZ(100px);
+		}
+		.cube .out_bottom{
+			background-color: pink;
+			transform:rotateX(90deg) translateZ(-100px);
+		}
+		.cube span{
+			display: block;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top:50px;
+			left:50px;
+		}
+		.cube .in_front{
+			background-color: yellow;
+			transform:rotateY(0deg) translateZ(50px);
+		}
+		.cube .in_back{
+			background-color: red;
+			transform:translateZ(-50px) rotateY(180deg);
+		}
+		.cube .in_left{
+			background-color: black;
+			transform:rotateY(90deg) translateZ(50px);
+		}
+		.cube .in_right{
+			background-color: blue;
+			transform:rotateY(-90deg) translateZ(50px);
+		}
+		.cube .in_top{
+			background-color: green;
+			transform:rotateX(90deg) translateZ(50px);
+		}
+		.cube .in_bottom{
+			background-color: pink;
+			transform:rotateX(90deg) translateZ(-50px);
+		}
+		.cube:hover .out_front{
+			transform:rotateY(0deg) translateZ(200px);
+		}
+		.cube:hover .out_back{
+			transform:translateZ(-200px) rotateY(180deg);
+		}
+		.cube:hover .out_left{
+			transform:rotateY(90deg) translateZ(200px);
+		}
+		.cube:hover .out_right{
+			transform:rotateY(-90deg) translateZ(200px);
+		}
+		.cube:hover .out_top{
+			transform:rotateX(90deg) translateZ(200px);
+		}
+		.cube:hover .out_bottom{
+			transform:rotateX(90deg) translateZ(-200px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="cube">
+			<!-- 前后左右上下六个方向 -->
+			<div class="out_front"></div>
+			<div class="out_back"></div>
+			<div class="out_left"></div>
+			<div class="out_right"></div>
+			<div class="out_top"></div>
+			<div class="out_bottom"></div>
+			<!-- 小正方体 -->
+			<span class="in_front"></span>
+			<span class="in_back"></span>
+			<span class="in_left"></span>
+			<span class="in_right"></span>
+			<span class="in_top"></span>
+			<span class="in_bottom"></span>
+		</div>
+	</div>
+</body>
+</html>
