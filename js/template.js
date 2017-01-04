@@ -250,6 +250,12 @@ var app = new Vue({
                 eSrc: "example/jsexample/divmove.html",
                 eHead: "拖动效果",
                 eDesc: "适配移动端的拖动效果，可在Chrome下模式移动端设备测试"
+            },
+            {
+                eClass: "carousel_img",
+                eSrc: "example/jsexample/carousel.html",
+                eHead: "轮播图",
+                eDesc: "使用原生js实现的轮播图"
             }
         ]
 
