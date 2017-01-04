@@ -156,18 +156,6 @@ nav ul li a:hover {
     animation: nav_cur_before 0.2s;
 }
 
-/*.nav_current:after{*/
-/*content: "";*/
-/*display: block;*/
-/*position: absolute;*/
-/*left: 5px;*/
-/*top: 0;*/
-/*height:50px;*/
-/*background: #21b982;*/
-/*-webkit-animation:nav_cur 0.3s ease-in;*/
-/*-o-animation:nav_cur 0.3s ease-in;*/
-/*animation:nav_cur 0.3s ease-in forwards;*/
-/*}*/
 .nav_current a {
     color: #FFFFFF;
 }
@@ -451,6 +439,11 @@ p{
 }
 .worddrop_img{
     background: url("../img/worddrop.jpg");
+    height: 110px;
+    background-size: cover;
+}
+.carousel_img{
+    background: url("../img/carousel.png");
     height: 110px;
     background-size: cover;
 }
