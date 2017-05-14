@@ -156,6 +156,18 @@ nav ul li a:hover {
     animation: nav_cur_before 0.2s;
 }
 
+/*.nav_current:after{*/
+/*content: "";*/
+/*display: block;*/
+/*position: absolute;*/
+/*left: 5px;*/
+/*top: 0;*/
+/*height:50px;*/
+/*background: #21b982;*/
+/*-webkit-animation:nav_cur 0.3s ease-in;*/
+/*-o-animation:nav_cur 0.3s ease-in;*/
+/*animation:nav_cur 0.3s ease-in forwards;*/
+/*}*/
 .nav_current a {
     color: #FFFFFF;
 }
@@ -203,7 +215,15 @@ nav ul li a:hover {
     left: 60px;
     height: 32px;
 }
-
+.me .lab{
+    color:#ddd;
+    position:absolute;
+    width:50px;
+    left:5px;
+    top:13px;
+    font-size:14px;
+    font-family:"楷体";
+}
 .me_name {
     display: inline-block;
     height: 42px;
@@ -211,11 +231,8 @@ nav ul li a:hover {
     color: #676767;
     cursor: pointer;
 }
-
-.me_blog {
+.my_lab{
     position: absolute;
-    top: 5px;
-    left: 52px;
     display: inline-block;
     cursor: pointer;
     background: #FFFFFF;
@@ -224,9 +241,17 @@ nav ul li a:hover {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+    overflow:hidden;
 }
-
-.me_blog img {
+.me_blog {
+    top: 5px;
+    left: 52px;
+}
+.my_github{
+    top:5px;
+    left: 102px;
+}
+.my_lab img {
     width: 30px;
     height: 30px;
 }
@@ -439,11 +464,6 @@ p{
 }
 .worddrop_img{
     background: url("../img/worddrop.jpg");
-    height: 110px;
-    background-size: cover;
-}
-.carousel_img{
-    background: url("../img/carousel.png");
     height: 110px;
     background-size: cover;
 }
